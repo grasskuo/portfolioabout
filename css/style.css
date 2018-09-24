@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,700");
+header.jumbotron:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav a {
+    font-family: 'Merriweather', serif;
+    font-weight: 400
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    color: #d9b90a
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    position: relative
+}
+
+.section-title:after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 4px;
+    background-color: #0f476a;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -20px
+}
+
+.section-sub-title {
+    text-align: center
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease
+}
+
+nav .brand {
+    font-size: 18px;
+    text-transform: uppercase
+}
+
+nav ul.nav-list {
+    list-style: none;
+    padding: 0
+}
+
+nav ul.nav-list li {
+    text-align: center
+}
+
+@media screen and (max-width: 767px) {
+    nav {
+        background-color: white;
+        border-bottom: 1px solid #fff;
+        z-index: 1000;
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+    }
+    nav .show-menu-btn {
+        width: 50px;
+        height: 50px;
+        border: none;
+        position: relative;
+        background-color: transparent;
+        left: 0;
+        top: 0;
+        float: left
+    }
+    nav .show-menu-btn:after,
+    nav .show-menu-btn:before {
+        position: absolute;
+        content: "";
+        width: 25px;
+        height: 2px;
+        background-color: #0f476a;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        -moz-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        transition: all .5s ease
+    }
+    nav .show-menu-btn:before {
+        top: 15px;
+        -moz-box-shadow: 0 9px 0 #0f476a;
+        -webkit-box-shadow: 0 9px 0 #0f476a;
+        box-shadow: 0 9px 0 #0f476a
+    }
+    nav .show-menu-btn:after {
+        bottom: 15px
+    }
+    nav .show-menu-btn.active:before {
+        transform: rotate3d(0, 0, 1, 45deg);
+        top: 25px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+    nav .show-menu-btn.active:after {
+        transform: rotate3d(0, 0, 1, -45deg);
+        bottom: 23px
+    }
+    nav .brand {
+        color: #0f476a;
+        float: left;
+        top: 10;
+        transform: translateY(50%)
+    }
+    nav ul.nav-list {
+        height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: white;
+        display: none
+    }
+    nav ul.nav-list.active {
+        display: block
+    }
+    nav ul.nav-list li {
+        margin-right: 20px;
+        width: 100%;
+        margin-top: 30px
+    }
+    nav ul.nav-list li a {
+        color: #0f476a;
+        font-size: 24px
+    }
+}
+
+@media screen and (min-width: 768px) {
+    nav {
+        background-color: rgba(135, 206, 235, 0.82);
+        border-bottom: 1px solid #fff;
+        padding-top: 12px;
+        padding-left: 20px;
+        padding-right: 20px
+    }
+    nav .brand {
+        color: white
+    }
+    nav .show-menu-btn {
+        display: none
+    }
+    nav ul.nav-list {
+        list-style: none;
+        padding: 0;
+        float: right
+    }
+    nav ul.nav-list li {
+        float: left;
+        margin-right: 20px
+    }
+    nav ul.nav-list li a {
+        color: white;
+        font-size: 16px
+    }
+    nav.scroll {
+        background-color: white;
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+    }
+    nav.scroll .brand {
+        color: #0f476a
+    }
+    nav.scroll .nav-list li a {
+        color: #0f476a
+    }
+}
+
+header.jumbotron {
+    height: 600px;
+    background-image: url(../images/urban-long-exposure-night-02.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative
+}
+
+eader.jumbotron:after {
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+header.jumbotron .container {
+    position: relative;
+    z-index: 5
+}
+
+header.jumbotron * {
+    color: none
+}
+
+header.jumbotron img {
+    margin: 0 auto
+}
+
+header.jumbotron .header-content {
+    margin-top: 150px
+}
+
+header.jumbotron h1 {
+    font-size: 50px;
+    color: #fff
+}
+
+header.jumbotron h3 {
+    font-size: 32px
+}
+
+header.jumbotron .header-scroll-down-btn {
+    display: block;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto
+}
+
+header.jumbotron .header-scroll-down-btn i.fa {
+    color: white
+}
+
+header.jumbotron .header-scroll-down-btn:hover i.fa {
+    color: #eee
+}
+
+@media screen and (max-width: 991px) {
+    header.jumbotron {
+        height: 100vh;
+        position: relative;
+        padding-bottom: 0
+    }
+    header.jumbotron .header-content {
+        display: none
+    }
+    header.jumbotron .header-scroll-down-btn {
+        position: relative;
+        bottom: 0
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header.jumbotron {
+        height: 100hv;
+        background-position: center;
+        width: 100%;
+        position: relative;
+        padding-bottom: 0
+    }
+    header.jumbotron .header-content {
+        display: block
+    }
+    header.jumbotron .header-content h1 {
+        font-size: 38px
+    }
+    header.jumbotron .header-content h3 {
+        font-size: 30px
+    }
+    header.jumbotron .header-scroll-down-btn {
+        position: relative;
+        bottom: 0
+    }
+}
+
+section,
+footer {
+    padding-top: 30px;
+    padding-bottom: 30px
+}
+
+section#basicIntronSection h3 {
+    text-align: center
+}
+
+section#basicIntronSection .icon {
+    text-align: center;
+    color: #0f476a
+}
+
+section#basicIntronSection .portrait {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto 10px
+}
+
+section#skillSection h4 {
+    color: #0f476a
+}
+
+.skill-progress-bar {
+    width: 100%;
+    height: 20px;
+    border: 1px solid;
+    color: #0977a8;
+    padding: 3px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px
+}
+
+.skill-progress-bar .progress-percentage {
+    height: 100%;
+    background-color: skyblue;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px
+}
+
+section#carouselSection {
+    padding-top: 0;
+    padding-bottom: 0
+}
+
+section#carouselSection .section-title {
+    color: #0f476a;
+    font-family: 'Merriweather', serif;
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    position: relative
+}
+
+section#carouselSection h1 {
+    text-align: center;
+    color: white;
+    font-size: 20px
+}
+
+section#carouselSection p {
+    text-align: center;
+    color: white;
+    font-size: 15px
+}
+
+.carousel-inner .item [id^="slide"] {
+    height: 600px;
+    width: 100%;
+    background-color: #333;
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.carousel-inner.item.carousel-caption {
+    font-size: 12px;
+    color: white
+}
+
+.body.container {
+    margin: 20;
+    position: relative
+}
+
+#slide1 {
+    background-image: url(../img/photo05.jpg)
+}
+
+#slide2 {
+    background-image: url(../img/gallery01.jpg)
+}
+
+#slide3 {
+    background-image: url(../img/photo03.jpg)
+}
+
+#slide4 {
+    background-image: url(../img/photo04.jpg)
+}
+
+#slide5 {
+    background-image: url(../img/photo01.jpg)
+}
+
+@media screen and (max-width: 767px) {
+    #slide1,
+    #slide2,
+    #slide3,
+    #slide4,
+    #slide5 {
+        height: 100hv;
+        background-position: center;
+        width: 100%;
+        position: relative;
+        padding-bottom: 0
+    }
+}
+
+section#gallerySection {
+    padding-top: 100;
+    padding-bottom: 50
+    
+}
+
+section#gallerySection .row {
+    position: absolute;
+    padding: top;
+    margin: 30;
+}
+
+section#gallerySection [class^='col-'] {
+    padding: 10;
+    position: relative
+}
+
+section#gallerySection [class^='col-']:hover h5 {
+    opacity: 1;
+    font-size: 26px
+}
+
+section#gallerySection [class^='col-']:hover img {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%)
+}
+
+section#gallerySection h5 {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 6px;
+    color: white;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease
+}
+
+section#gallerySection img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease
+}
+
+footer {
+    min-height: 400px;
+    background-color: skyblue
+}
+
+footer .section-title:after {
+    background-color: #fff
+}
+
+footer * {
+    color: white;
+    text-align: center
+}

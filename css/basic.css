@@ -1,0 +1,21 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden
+}
+
+a,
+a:hover {
+    text-decoration: none
+}
+
+input:focus,
+button:focus {
+    outline: none
+}

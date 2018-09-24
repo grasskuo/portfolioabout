@@ -1,0 +1,492 @@
+@import 'compass/css3';
+$primary: #0f476a;
+$default: #0f476a;
+$accent: #ffb11f;
+$shadow: rgba(0, 0, 0, 0.1);
+
+/* note extend */
+
+%after-cover {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+/* note font */
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav a {
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    color: $default;
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    position: relative;
+    &:after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 4px;
+        background-color: $default;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -20px;
+    }
+}
+
+.section-sub-title {
+    text-align: center;
+}
+
+
+/* note nav */
+
+
+/* general nav */
+
+nav {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    @include transition(all 0.5s ease);
+    .brand {
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    ul.nav-list {
+        list-style: none;
+        padding: 0;
+        li {
+            text-align: center;
+        }
+    }
+}
+
+
+/* mobile nav */
+
+@media screen and (max-width: 767px) {
+    nav {
+        background-color: white;
+        border-bottom: 1px solid #fff;
+        z-index: 1000;
+        @include box-shadow(0 0 10px $shadow);
+        .show-menu-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            position: relative;
+            background-color: transparent;
+            left: 0;
+            top: 0;
+            float: left;
+            &:after,
+            &:before {
+                position: absolute;
+                content: "";
+                width: 25px;
+                height: 2px;
+                background-color: $primary;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                @include transition(all .5s ease);
+            }
+            &:before {
+                top: 15px;
+                @include box-shadow(0 9px 0 $primary);
+            }
+            &:after {
+                bottom: 15px;
+            }
+            &.active {
+                &:before {
+                    transform: rotate3d(0, 0, 1, 45deg);
+                    top: 25px;
+                    @include box-shadow(none);
+                }
+                &:after {
+                    transform: rotate3d(0, 0, 1, -45deg);
+                    bottom: 23px;
+                }
+            }
+        }
+        .brand {
+            color: $primary;
+            float: left;
+            top: 50%;
+            transform: translateY(50%);
+        }
+        ul.nav-list {
+            height: 100vh;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: white;
+            display: none;
+            &.active {
+                display: block;
+            }
+            li {
+                margin-right: 20px;
+                width: 100%;
+                margin-top: 30px;
+                a {
+                    color: $primary;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* desktop nav */
+
+@media screen and (min-width: 768px) {
+    nav {
+        background-color:rgba(135, 206, 235, 0.82);
+        border-bottom: 1px solid #fff;
+        padding-top: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+        .brand {
+            color: white;
+        }
+        .show-menu-btn {
+            display: none;
+        }
+        ul.nav-list {
+            list-style: none;
+            padding: 0;
+            float: right;
+            li {
+                float: left;
+                margin-right: 20px;
+                a {
+                    color: white;
+                    font-size: 16px;
+                }
+            }
+        }
+        &.scroll {
+            background-color: white;
+            @include box-shadow(0 0 10px $shadow);
+            .brand {
+                color: $primary;
+            }
+            .nav-list li a {
+                color: $primary;
+            }
+        }
+    }
+}
+
+
+/* note header */
+
+header.jumbotron {
+    height: 600px;
+    background-image: url(http://www.uuannapolis.org/wp-content/uploads/2013/12/hand-shake.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    &:after {
+        @extend %after-cover;
+        background-color: $shadow;
+    }
+    .container {
+        position: relative;
+        z-index: 5;
+    }
+    * {
+        color: white;
+    }
+    img {
+        margin: 0 auto;
+    }
+    .header-content {
+        margin-top: 150px;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    h3 {
+        font-size: 32px;
+    }
+    .header-scroll-down-btn {
+        display: block;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+        i.fa {
+            color: white;
+        }
+        &:hover i.fa {
+            color: #eee;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    header.jumbotron {
+        height: 100vh;
+        position:relative;
+        padding-bottom: 0;
+        .header-content {
+            display:none;
+        }
+        .header-scroll-down-btn {
+            position: relative;
+            bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header.jumbotron {
+        height: 100hv;
+        background-position: center;
+        width: 100%;
+        position:relative;
+        padding-bottom: 0;
+        .header-content {
+            display: block;
+            h1{
+                font-size: 38px;
+            }
+            h3{
+                font-size: 30px;
+            }
+        }
+        .header-scroll-down-btn {
+            position: relative;
+            bottom: 0;
+        }
+        
+    }
+}
+
+
+
+/* note section */
+
+%section-padding {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+section {
+    @extend %section-padding;
+}
+
+
+/* note basicIntronSection */
+
+section#basicIntronSection {
+    h3 {
+        text-align: center;
+    }
+    .icon {
+        text-align: center;
+        color: $primary;
+    }
+    .portrait {
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin: 0 auto 10px;
+    }
+}
+
+
+/* note skillSection */
+
+section#skillSection {
+    h4 {
+        color: $primary;
+    }
+}
+
+.skill-progress-bar {
+    width: 100%;
+    height: 20px;
+    border: 1px solid;
+    color: #0977a8;
+    padding: 3px;
+    @include border-radius(10px);
+    .progress-percentage {
+        height: 100%;
+        //width: 100%;
+        background-color: skyblue;
+        @include border-radius(6px);
+    }
+}
+
+
+/* note carousel */
+
+section#carouselSection {
+    padding-top: 0;
+    padding-bottom: 0;
+    .section-title {
+        color: $default;
+        font-family: 'Merriweather', serif;
+        font-size: 35px;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        position: relative;
+    }
+    h1 {
+        text-align: center;
+        color: white;
+        font-size: 20px;
+    }
+    p {
+        text-align: center;
+        color: white;
+        font-size: 15px;
+    }
+}
+
+.carousel-inner .item [id^="slide"] {
+    height: 600px;
+    width: 100%;
+    background-color: #333;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel-inner.item.carousel-caption {
+    font-size: 12px;
+    color: white;
+}
+
+#slide1 {
+    background-image: url(../img/photo05.jpg);
+}
+
+#slide2 {
+    background-image: url(../img/gallery01.jpg);
+}
+
+#slide3 {
+    background-image: url(../img/photo03.jpg);
+}
+
+#slide4 {
+    background-image: url(../img/photo04.jpg);
+}
+
+#slide5 {
+    background-image: url(../img/photo01.jpg);
+}
+
+@media screen and (max-width: 767px){
+    #slide1,
+    #slide2,
+    #slide3,
+    #slide4,
+    #slide5{
+        height: 100hv;
+        background-position: center;
+        width: 100%;
+        position:relative;
+        padding-bottom: 0;
+    }
+    
+}
+
+/* note gallerySection */
+
+section#gallerySection {
+    padding-top: 0;
+    padding-bottom: 0;
+    .row{
+        padding:0;
+        margin: 0;
+    }
+    [class^='col-'] {
+        padding: 0;
+        position:relative;
+        &:hover h5 {
+            opacity: 1;
+            font-size: 26px;
+        }
+        &:hover img {
+            @include filter(grayscale(0%));
+        }
+    }
+    h5 {
+        position: absolute;
+        z-index: 5;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 6px;
+        color: white;
+        text-shadow: 0 0 3px $shadow;
+        opacity: 0;
+        @include transition(all 0.5s ease);
+    }
+
+    img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        @include filter(grayscale(100%));
+        @include transition(all 0.5s ease);
+    }
+}
+
+
+/* note footer */
+
+footer {
+    @extend %section-padding;
+    min-height: 400px;
+    background-color: skyblue;
+    .section-title:after {
+        background-color: #fff;
+    }
+    * {
+        color: white;
+        text-align: center;
+    }
+}
